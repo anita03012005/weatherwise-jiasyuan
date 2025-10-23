@@ -1,16 +1,12 @@
 # ✍️ Project Reflection
+I began this project by going back to all the Blackboard modules and reading them again. Honestly I don't have a programming background, so I would like to learn all the basic skills first. I reviewed Python parts like functions, requests, pandas DataFrames, and simple plotting. At the begining of WeatherWise project, I felt stuck. I understood the lessons when reading, but I could not apply them to the project. That made me disappointed. In order to fix this, I broke the work into small steps and used short prompts to ask AI for very specific help. Step by step, I started to see progress and felt back on track.
 
-## AI Tools Used
-What tools did you use (e.g., ChatGPT, Copilot)? How did they help?
+I built the data function with wttr.in using requests. I made sure it returns a clear dictionary for current and forecast. Then I learned a big lesson about data shape. My chart code and agent expected columns like min_temp_c and precip_MM, but my raw data had different names and some values were nested. I wrote forecast_to_df to normalise the DataFrame. If avg_temp_c was missing, I computed it from min and max. After this, the charts worked and the agent could read the data smoothly.
 
-## Prompting Techniques
-Which intentional prompting strategies did you apply?
+I also made each notebook cell independent. If a cell uses pandas, I import pandas in that cell. If a cell draws a chart, I import matplotlib there and call plt.show. This stopped the NameError problems and made the notebook easier to mark.
 
-## What Worked Well?
-Describe one thing you’re proud of.
+To meet the project requirements, I added two clear charts, a tidy forecast table, and a simple console menu. The menu lets the marker test current weather, forecast, charts, and a quick question. My NLP is simple on purpose. It looks for words like today, tomorrow, week, temperature, rain, wind, humidity, and grabs a city at the end of the sentence.
 
-## What Would You Do Differently?
-Describe one thing you'd change if you had more time.
+AI (ChatGpt) helped me a lot, but I also learned to check everything by the process. There's one time AI told me that my DataFrame already had avg_temp_c. It did not. I checked the columns and fixed it by adding the calculation myself. This showed me the benefit of AI plus my own thinking.
 
-## Final Thoughts
-Any parting comments on your learning experience?
+Overall, I learned how to move from lessons to a working app. The key was small steps, clean function names, standard column names, and clear outputs. If I had more time, I would add caching, simple tests for forecast_to_df, and better messages for invalid cities. Most of all, I learned to use AI in a more efficient way, with focused prompts and quick checks against real data.
